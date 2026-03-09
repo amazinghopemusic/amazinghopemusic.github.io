@@ -23,7 +23,7 @@ async function registerServiceWorkers() {
   await navigator.serviceWorker.register("service-worker.js");
 
   // Firebase messaging service worker
-  const reg = await navigator.serviceWorker.register("firebase-messaging-sw.js");
+  const reg = await navigator.serviceWorker.register("firebase-message-sw.js");
   messaging.useServiceWorker(reg);
 
   return reg;
