@@ -33,7 +33,7 @@ async function enableNotifications() {
 
     // 2. Get FCM token (Firebase will auto-load /firebase-messaging-sw.js)
     const token = await messaging.getToken({
-      vapidKey: "BHvo6e4UeUYecrm6vWRkOv6HHGijS86jQGWJKvPmIH7lDTD-5XPyUz_T-xNHjKJIO92fmCtoviVZi_WxanrTprU"
+      vapidKey: "BHvo6e4UeUYecrm6vWRkOv6HHGijS86jQGWJKvPmIH7lDTD-5XPy"
     });
 
     if (!token) {
@@ -46,7 +46,7 @@ async function enableNotifications() {
 
   } catch (error) {
     console.error("Notification error:", error);
-    setStatus("Error enabling notifications. Check console.");
+    setStatus("Error enabling notifications. " + error.message);
   }
 }
 
