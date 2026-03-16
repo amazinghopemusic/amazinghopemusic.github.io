@@ -14,18 +14,23 @@
   <h2>Login</h2>
 
   <input id="username" placeholder="Username">
-  <input id="password" type="password" placeholder="Password">
+  <input id="password" type="password" placeholder="Password" onkeydown="if(event.key==='Enter'){login();}">
 
   <button onclick="login()">Login</button>
 
   <p id="status"></p>
 
   <script>
+    const token = localStorage.getItem("authToken");
+    if (token) {
+      window.location.href = "index.html";
+    }
+
     async function login() {
       const username = document.getElementById("username").value;
       const password = document.getElementById("password").value;
 
-      const response = await fetch("http://amazinghopechurch.org:81/api/login", {
+      const response = await fetch("http://127.0.0.1:5000/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
@@ -36,7 +41,7 @@
       if (result.token) {
         localStorage.setItem("authToken", result.token);
         document.getElementById("status").innerText = "Login successful!";
-        window.location.href = "dashboard.html"; // redirect
+        window.location.href = "index.html"; // redirect
       } else {
         document.getElementById("status").innerText = "Invalid login";
       }
