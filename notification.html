@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Music Team Portal Push App</title>
+  <title>Music Team Notifications</title>
 
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#2196f3" />
@@ -80,16 +80,10 @@
 </head>
 <body>
   <div class="app">
-    <div class="header">Music Team Portal Push App</div>
+    <div class="header">Music Team Notifications</div>
 
     <div class="content">
       <div class="card">
-        <h3>Welcome</h3>
-        <p>This is a real PWA-style app with push notifications.</p>
-      </div>
-
-      <div class="card">
-        <h3>Notifications</h3>
         <p>Tap the button below to enable push notifications on this device.</p>
         <button id="notifyBtn">Enable Notifications</button>
         <div id="status" class="status"></div>
@@ -108,10 +102,12 @@
   <script src="app.js?v=1.1"></script>
 
   <script>
+    /*
     const token = localStorage.getItem("authToken");
     if (!token) {
       window.location.href = "login.html";
     }
+    */
   </script>
 
 
