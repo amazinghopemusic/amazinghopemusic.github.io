@@ -44,7 +44,6 @@ async function enableNotifications() {
     // 3. Show token
     // setStatus("Device Token:\n" + token);
     location.href = "http://167.71.199.130:81/enable-notifications/" + token
-    return;
 
   } catch (error) {
     console.error("Notification error:", error);
